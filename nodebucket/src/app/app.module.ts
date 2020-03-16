@@ -14,7 +14,9 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './pages/login/login.component';
+import { AboutComponent } from './pages/about/about.component';
+import {MatCardModule, MatInputModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { LoginComponent } from './login/login.component';
     BaseLayoutComponent,
     AuthLayoutComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +38,8 @@ import { LoginComponent } from './login/login.component';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
+    MatCardModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
