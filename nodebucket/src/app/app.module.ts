@@ -17,6 +17,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { LoginComponent } from './pages/login/login.component';
 import { AboutComponent } from './pages/about/about.component';
 import {MatCardModule, MatInputModule} from '@angular/material';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import {MatCardModule, MatInputModule} from '@angular/material';
     AuthLayoutComponent,
     HomeComponent,
     LoginComponent,
-    AboutComponent
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +42,7 @@ import {MatCardModule, MatInputModule} from '@angular/material';
     MatCardModule,
     MatInputModule
   ],
-  providers: [],
+  providers: [ CookieService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

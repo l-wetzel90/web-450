@@ -9,7 +9,6 @@ export class BaseLayoutComponent implements OnInit {
   year: number = Date.now();
 
   constructor() {
-
   }
 
   ngOnInit() {
