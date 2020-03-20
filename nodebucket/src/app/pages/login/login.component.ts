@@ -13,8 +13,6 @@ export class LoginComponent implements OnInit {
 
   //sets EMPID to cookie
   onSubmit(form: NgForm) {
-
-
     // let empId = form.value.empId;
     // //NEEDS VALIDATION THAT ID IS DB
     // this.cookie.set("eId", empId );

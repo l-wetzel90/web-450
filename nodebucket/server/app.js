@@ -51,18 +51,18 @@ mongoose
  * API(s)
  */
 //get all employees
-app.get("/api/employees", (req, res, next) => {
-  //get all employee
-  Employee.find({}, "empId" , (err, employee) => {
-    if (err) {
-      console.log(err);
-      return next(err);
-    } else {
-      console.log(employee);
-      res.json(employee);
-    }
-  });
-});
+// app.get("/api/employees", (req, res, next) => {
+//   //get all employee
+//   Employee.find({}, "empId" , (err, employee) => {
+//     if (err) {
+//       console.log(err);
+//       return next(err);
+//     } else {
+//       console.log(employee);
+//       res.json(employee);
+//     }
+//   });
+// });
 
 //FindEmployeeById
 app.get("/api/employees/:empId", (req, res, next) => {
@@ -141,6 +141,11 @@ app.put("/api/employees/:empId/tasks/:taskId", (req, res, next) => {
       const todoItem = employee.todo.find(
         item => item._id.toString() === req.params.taskId
       );
+
+      // employee.set({
+      //   todo: req.body.todo,
+      //   done: req.body.done
+      // });
 
       //push item to array
       employee.done.push(todoItem);
