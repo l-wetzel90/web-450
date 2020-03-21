@@ -24,7 +24,6 @@ const mongoose = require('mongoose');
 //   done: [Item]
 // });
 
-
 const itemSchema = new mongoose.Schema({
   text: {type: String}
   // finished: { type: Boolean,

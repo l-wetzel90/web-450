@@ -28,11 +28,9 @@ export class LoginGuard implements CanActivate {
     | UrlTree {
     const sessionUser = this.cookieService.get("session_user");
 
-    // If the cookie is present, allow the user to access the app
     if (sessionUser) {
       return true;
     } else {
-      // Otherwise, the user is not signed into the system and should be redirected to the sign-in component.
       this.router.navigate(["login"]);
       return false;
     }

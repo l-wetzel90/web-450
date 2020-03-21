@@ -20,6 +20,7 @@ import { MatCardModule, MatInputModule } from "@angular/material";
 import { CookieService } from "ngx-cookie-service";
 import { SignInComponent } from "./pages/sign-in/sign-in.component";
 import { LoginGuard } from "./login.guard";
+import {AuthGuard}from "./auth.guard";
 import { TaskManagerComponent } from './pages/task-manager/task-manager.component';
 import {DragDropModule } from "@angular/cdk/drag-drop";
 
@@ -56,7 +57,7 @@ import { MatSnackBarModule } from "@angular/material/snack-bar";
     DragDropModule,
     MatSnackBarModule
   ],
-  providers: [CookieService, LoginGuard],
+  providers: [CookieService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

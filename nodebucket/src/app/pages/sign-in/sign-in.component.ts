@@ -10,7 +10,6 @@ import { MatSnackBar } from "@angular/material/snack-bar";
   templateUrl: "./sign-in.component.html",
   styleUrls: ["./sign-in.component.css"]
 })
-
 export class SignInComponent implements OnInit {
   form: FormGroup;
 
@@ -41,7 +40,7 @@ export class SignInComponent implements OnInit {
     this.http.get("/api/employees/" + empId).subscribe(res => {
       if (res) {
         this.cookieService.set("session_user", empId);
-        this.router.navigate(["/"]);
+        this.router.navigate(["tasks"]);
       } else {
         this.snackBar.open(
           "The employee id you entered is invalid, please try again.",

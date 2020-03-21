@@ -129,7 +129,7 @@ app.post("/api/employees/:empId/tasks", (req, res, next) => {
 }); //end of api post
 
 //UpdateTask:   maybe taskId in url
-app.put("/api/employees/:empId/tasks/:taskId", (req, res, next) => {
+app.put("/api/employees/:empId/tasks", (req, res, next) => {
   //update task to done
   Employee.findOne({ empId: req.params.empId }, (err, employee) => {
     if (err) {
@@ -138,19 +138,22 @@ app.put("/api/employees/:empId/tasks/:taskId", (req, res, next) => {
     } else {
       console.log(employee);
 
-      const todoItem = employee.todo.find(
-        item => item._id.toString() === req.params.taskId
-      );
+      employee.set({
+        todo: req.body.todo,
+        done: req.body.done
+      });
 
-      // employee.set({
-      //   todo: req.body.todo,
-      //   done: req.body.done
-      // });
+/*
+was tryting something else
+// const todoItem = employee.todo.find(
+      //   item => item._id.toString() === req.params.taskId
+      // );
 
       //push item to array
       employee.done.push(todoItem);
       //remove item from db
       employee.todo.id(todoItem._id).remove();
+      */
 
       //save to db
       employee.save(function(err, employee) {
